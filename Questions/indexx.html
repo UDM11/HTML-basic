@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Marathon Registration</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="raceCategory">Race Category:</label>
+            <select id="raceCategory" name="raceCategory" required>
+                <option value="">Select a category</option>
+                <option value="5K">5K</option>
+                <option value="10K">10K</option>
+                <option value="Half Marathon">Half Marathon</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div id="confirmationMessage" class="confirmation-message"></div>
+        
+        <button id="getHelpBtn" class="help-btn">Get Help</button>
+        <div id="helpMessage" class="help-message"></div>
+    </div>
+
+    <script src="sscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+    <style>
+        /* Universal Selector */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Type Selector (Element Selector) */
+        p {
+            color: blue;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* ID Selector */
+        #special {
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Descendant Selector */
+        div p {
+            font-size: 18px;
+        }
+
+        /* Child Selector */
+        div > p {
+            font-size: 20px;
+            color: green;
+        }
+
+        /* Adjacent Sibling Selector */
+        h1 + p {
+            color: purple;
+        }
+
+        /* General Sibling Selector */
+        h1 ~ p {
+            color: orange;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+
+        /* Pseudo-class Selector */
+        a:hover {
+            color: red;
+        }
+
+        /* Pseudo-element Selector */
+        p::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Selectors Demonstration</h1>
+    <p>This is a paragraph.</p>
+    <p class="highlight">This paragraph has a class applied to it.</p>
+    <p id="special">This paragraph has an ID applied to it.</p>
+
+    <div>
+        <p>This paragraph is inside a div (Descendant Selector).</p>
+        <p>This is a direct child paragraph (Child Selector).</p>
+    </div>
+
+    <h1>Example of Sibling Selectors</h1>
+    <p>This paragraph is adjacent to the first h1 (Adjacent Sibling Selector).</p>
+    <p>This paragraph is a general sibling to the h1 (General Sibling Selector).</p>
+
+    <input type="text" placeholder="Type something here">
+
+    <a href="#">Hover over this link</a>
+</body>
+</html>

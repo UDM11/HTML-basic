@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .gender,
+        .subject {
+            font-weight: bold;
+        }
+        textarea {
+            height: 200px;
+        }
+        .form-gender {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .form-subject {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 0;
+            flex: 1;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        button:hover {
+            background-color: #BB2649;
+            color: white;
+            border: 1px solid black;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Full Name">
+                <span id="nameError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email">
+                <span id="emailError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date Of Birth:</label>
+                <input type="date" id="dob" name="dob">
+                <span id="dobError" class="error"></span>
+            </div>
+            <div>
+                <label style="font-weight: bold;">Gender:</label>
+                <br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="others">
+                <label for="others">Others</label>
+                <span id="genderError" class="error"></span>
+            </div>
+            <div>
+                <label style="font-weight: bold;">Favorite Subject:</label>
+                <br>
+                <input type="checkbox" id="it" name="subject" value="it">
+                <label for="it">Internet Technology I</label>
+                <input type="checkbox" id="math" name="subject" value="math">
+                <label for="math">Mathematics I</label>
+                <input type="checkbox" id="computer" name="subject" value="computer">
+                <label for="computer">Computer Fundamentals</label>
+                <input type="checkbox" id="programming" name="subject" value="programming">
+                <label for="programming">C Programming</label>
+                <input type="checkbox" id="english" name="subject" value="english">
+                <label for="english">English</label>
+                <span id="subjectError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="district">Districts:</label>
+                <select name="district" id="district">
+                    <option value="">--Select District--</option>
+                    <option value="achham">Achham</option>
+                    <option value="arghakhanchi">Arghakhanchi</option>
+                    <option value="baglung">Baglung</option>
+                    <option value="baitadi">Baitadi</option>
+                    <option value="bajhang">Bajhang</option>
+                    <option value="bajura">Bajura</option>
+                    <option value="banke">Banke</option>
+                    <option value="gorkha">Gorkha</option>
+                    <option value="gulmi">Gulmi</option>
+                    <option value="humla">Humla</option>
+                </select>
+                <span id="districtError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="profilePic">Upload Profile Picture:</label>
+                <input type="file" id="profilePic" name="profilePic">
+                <span id="profilePicError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea name="bio" id="bio" placeholder="Tell us about Yourself"></textarea>
+                <span id="bioError" class="error"></span>
+            </div>
+            <div>
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the terms and conditions</label>
+                <span id="termsError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            document.querySelectorAll('.error').forEach(error => error.textContent = '');
+            const fname = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Full Name is required.';
+                isValid = false;
+            }
+            const email = document.getElementById('email').value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required.';
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                isValid = false;
+            }
+            const password = document.getElementById('password').value.trim();
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                isValid = false;
+            } else if (password.length < 8) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long.';
+                isValid = false;
+            }
+            const dob = document.getElementById('dob').value;
+            if (dob === '') {
+                document.getElementById('dobError').textContent = 'Date of Birth is required.';
+                isValid = false;
+            }
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Gender is required.';
+                isValid = false;
+            }
+            const subjects = document.querySelectorAll('input[name="subject"]:checked');
+            if (subjects.length < 4) {
+                document.getElementById('subjectError').textContent = 'Please select at least 4 subjects.';
+                isValid = false;
+            }
+            const district = document.getElementById('district').value;
+            if (district === '') {
+                document.getElementById('districtError').textContent = 'District is required.';
+                isValid = false;
+            }
+            const bio = document.getElementById('bio').value.trim();
+            if (bio === '') {
+                document.getElementById('bioError').textContent = 'Bio is required.';
+                isValid = false;
+            }
+            const terms = document.getElementById('terms').checked;
+            if (!terms) {
+                document.getElementById('termsError').textContent = 'You must agree to the terms and conditions.';
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+            return isValid;
+        }
+    </script>
+</body>
+</html>

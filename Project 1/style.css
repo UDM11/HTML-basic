@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.photo {
+    background-color: white;
+    color: black;
+    border: 1px, solid, black;
+    text-align: center;
+    width: 90px;
+    height: 120px;
+    padding: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    background-color: white;
+    box-sizing: content-box;
+}
+.number {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8%;
+    text-align: center;
+}
+.faculty {
+    border: none;
+}
+/* header {
+    text-align: center;
+
+} */
+
+.header {
+    text-align: center;
+    top: 25px;
+    text-size-adjust: 2rem;
+}
+
+img {
+    padding-right: 1000px;
+    padding-top: 25px;
+    padding-left: 25px;
+}
+
+/* div {
+    text-align: center;
+} */
+

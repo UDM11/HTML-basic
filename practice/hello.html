@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .result {
+            font-size: 1.2em;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Grading System</h2>
+        <form id="gradingForm">
+            <label for="score">Enter Your Score (0-100):</label>
+            <input type="number" id="score" min="0" max="100" required>
+            <button type="button" onclick="calculateGrade()">Submit</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            const score = document.getElementById("score").value;
+            let grade, subGrade;
+
+            if (score >= 90) {
+                grade = "A";
+                subGrade = "Excellent";
+            } else if (score >= 80) {
+                grade = "B";
+                subGrade = "Very Good";
+            } else if (score >= 70) {
+                grade = "C";
+                subGrade = "Good";
+            } else if (score >= 60) {
+                grade = "D";
+                subGrade = "Fair";
+            } else {
+                grade = "F";
+                subGrade = "Fail";
+            }
+
+            document.getElementById("result").innerHTML = `Your Grade: <b>${grade}</b> (${subGrade})`;
+        }
+    </script>
+</body>
+</html>

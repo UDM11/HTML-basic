@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+        /* Resetting margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .card {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .card:hover{
+            border: 2px solid black;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive design using media queries */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Design Example</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to Our Responsive Site</h2>
+        <p>This layout adjusts based on the screen size. Resize the browser to see it in action!</p>
+        <div class="grid">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 6</div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Responsive Design Co.</p>
+    </footer>
+</body>
+</html>
